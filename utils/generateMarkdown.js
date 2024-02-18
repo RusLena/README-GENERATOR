@@ -10,7 +10,7 @@ function generateMarkdown(data) {
   * License
   * Contributing
   * Tests
- 
+  * Questions
   
   ## Installation
   ${data.installation}

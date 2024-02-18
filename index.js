@@ -34,7 +34,7 @@ const questions = [
       {
         type: "input",
         name: "usage",
-        message: "How do you use the repo?"
+        message: "How do you use the repo?",
       },
       {
         type: "list",
@@ -45,7 +45,7 @@ const questions = [
       {
         type: "input",
         name: "contributing",
-        message: "How can others contribute to the project?"
+        message: "How can others contribute to the project?",
       },
       {
         type: "input",
@@ -57,12 +57,16 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-    
+  return fs.writeFileSync(path.join(process.cwd(), fileName), data);  
 }
 
 // function to initialize program
 function init() {
-
+  inquirer.prompt(questions)
+  .then((answers) => {
+  const readmeContent = generateMarkdown(answers);
+  writeToFile("README.md", readmeContent);
+})
 }
 
 // function call to initialize program
