@@ -26,12 +26,6 @@ const questions = [
         message: "Write a description of the project"
       },
       {
-        type: "list",
-        name: "license",
-        message: "Choose licenses for the project",
-        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
-      },
-      {
         type: "input",
         name: "installation",
         message: "How do you install dependencies?",
@@ -39,21 +33,26 @@ const questions = [
       },
       {
         type: "input",
-        name: "tests",
-        message: "How do you run the test?",
-        default: "npm test"
-      },
-      {
-        type: "input",
         name: "usage",
         message: "How do you use the repo?"
+      },
+      {
+        type: "list",
+        name: "license",
+        message: "Choose licenses for the project",
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
       },
       {
         type: "input",
         name: "contributing",
         message: "How can others contribute to the project?"
-      }
-
+      },
+      {
+        type: "input",
+        name: "tests",
+        message: "How do you run the test?",
+        default: "npm test"
+      },
 ];
 
 // function to write README file
